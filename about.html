@@ -1,0 +1,1040 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About | Tridev Patel</title>
+
+    <meta name="description" content="About Tridev Patel — Electronics and Communication Engineering student focused on Embedded Systems, IoT, Automation and AI.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <!-- About Page CSS -->
+    <style>
+        /* =========================================
+           ABOUT PAGE
+        ========================================= */
+        
+        .page-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            padding-top: 100px;
+        }
+        
+        .page-hero-content {
+            max-width: 850px;
+        }
+        
+        .page-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .page-label::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .page-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+        
+        .page-title span {
+            color: var(--primary);
+        }
+        
+        .page-description {
+            max-width: 720px;
+            color: var(--text-muted);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        /* =========================================
+           ABOUT INTRO
+        ========================================= */
+        
+        .about-section {
+            padding: 100px 0;
+        }
+        
+        .about-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+        
+        .about-image {
+            position: relative;
+            min-height: 500px;
+            border: 1px solid var(--border);
+            border-radius: 24px;
+            background: linear-gradient( 145deg, rgba(0, 217, 255, 0.08), rgba(255, 255, 255, 0.02));
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .about-image::before {
+            content: "";
+            position: absolute;
+            inset: 20px;
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-radius: 18px;
+        }
+        
+        .about-photo {
+            width: 70%;
+            height: 70%;
+            object-fit: cover;
+            border-radius: 20px;
+            position: relative;
+            z-index: 2;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+        }
+        
+        .about-image-placeholder {
+            width: 70%;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 5rem;
+            font-weight: 700;
+            color: var(--primary);
+            background: rgba(0, 217, 255, 0.06);
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            box-shadow: 0 0 60px rgba(0, 217, 255, 0.08), inset 0 0 50px rgba(0, 217, 255, 0.04);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .about-image .tech-dot {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 15px var(--primary);
+        }
+        
+        .tech-dot.dot-1 {
+            top: 15%;
+            left: 15%;
+        }
+        
+        .tech-dot.dot-2 {
+            top: 25%;
+            right: 12%;
+        }
+        
+        .tech-dot.dot-3 {
+            bottom: 18%;
+            left: 20%;
+        }
+        
+        .tech-dot.dot-4 {
+            bottom: 12%;
+            right: 20%;
+        }
+        /* =========================================
+           ABOUT CONTENT
+        ========================================= */
+        
+        .section-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            margin-bottom: 25px;
+            color: var(--white);
+        }
+        
+        .about-content p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 18px;
+        }
+        
+        .about-highlights {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+        
+        .highlight-item {
+            padding: 18px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: 0.3s ease;
+        }
+        
+        .highlight-item:hover {
+            border-color: rgba(0, 217, 255, 0.4);
+            transform: translateY(-3px);
+        }
+        
+        .highlight-item strong {
+            display: block;
+            color: var(--white);
+            margin-bottom: 5px;
+        }
+        
+        .highlight-item span {
+            color: var(--text-muted);
+            font-size: 0.85rem;
+        }
+        /* =========================================
+           EDUCATION
+        ========================================= */
+        
+        .education-section {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .education-header {
+            max-width: 700px;
+            margin-bottom: 60px;
+        }
+        
+        .education-card {
+            display: grid;
+            grid-template-columns: 150px 1fr;
+            gap: 35px;
+            padding: 35px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.02);
+            position: relative;
+            overflow: hidden;
+            transition: 0.3s ease;
+        }
+        
+        .education-card:hover {
+            border-color: rgba(0, 217, 255, 0.35);
+            transform: translateY(-5px);
+        }
+        
+        .education-year {
+            color: var(--primary);
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+        }
+        
+        .education-degree {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.4rem;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        
+        .education-institute {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+        
+        .education-description {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        /* =========================================
+           CAREER FOCUS
+        ========================================= */
+        
+        .focus-section {
+            padding: 100px 0;
+        }
+        
+        .focus-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 60px;
+        }
+        
+        .career-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .career-card {
+            padding: 30px 25px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: 0.3s ease;
+        }
+        
+        .career-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0, 217, 255, 0.4);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+        
+        .career-number {
+            color: rgba(0, 217, 255, 0.5);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+        }
+        
+        .career-card h3 {
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        
+        .career-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.9rem;
+        }
+        /* =========================================
+           JOURNEY TIMELINE
+        ========================================= */
+        
+        .journey-section {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid var(--border);
+        }
+        
+        .journey-header {
+            max-width: 650px;
+            margin-bottom: 60px;
+        }
+        
+        .timeline {
+            position: relative;
+            max-width: 850px;
+            margin: auto;
+        }
+        
+        .timeline::before {
+            content: "";
+            position: absolute;
+            left: 8px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient( to bottom, var(--primary), rgba(0, 217, 255, 0.05));
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 45px;
+            margin-bottom: 50px;
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 2px;
+            top: 5px;
+            width: 13px;
+            height: 13px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 18px rgba(0, 217, 255, 0.7);
+        }
+        
+        .timeline-date {
+            color: var(--primary);
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item h3 {
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--white);
+            font-size: 1.35rem;
+            margin-bottom: 8px;
+        }
+        
+        .timeline-item p {
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        /* =========================================
+           ABOUT CTA
+        ========================================= */
+        
+        .about-cta {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .about-cta-box {
+            padding: 70px 30px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 24px;
+            background: radial-gradient( circle at center, rgba(0, 217, 255, 0.08), transparent 65%);
+        }
+        
+        .about-cta h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        
+        .about-cta p {
+            color: var(--text-muted);
+            max-width: 600px;
+            margin: 0 auto 30px;
+            line-height: 1.7;
+        }
+        /* =========================================
+           ABOUT RESPONSIVE
+        ========================================= */
+        
+        @media (max-width: 1000px) {
+            .about-grid {
+                grid-template-columns: 1fr;
+                gap: 50px;
+            }
+            .about-image {
+                max-width: 500px;
+                width: 100%;
+                margin: auto;
+            }
+            .career-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .page-hero {
+                min-height: 60vh;
+            }
+            .about-section,
+            .education-section,
+            .focus-section,
+            .journey-section,
+            .about-cta {
+                padding: 70px 0;
+            }
+            .education-card {
+                grid-template-columns: 1fr;
+                gap: 15px;
+                padding: 25px;
+            }
+            .about-highlights {
+                grid-template-columns: 1fr;
+            }
+            .career-grid {
+                grid-template-columns: 1fr;
+            }
+            .about-image {
+                min-height: 380px;
+            }
+            .about-image-placeholder {
+                font-size: 4rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-title {
+                font-size: 3rem;
+            }
+            .page-description {
+                font-size: 0.95rem;
+            }
+            .about-image {
+                min-height: 320px;
+            }
+            .about-cta-box {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
+
+    <div class="preloader">
+        <div class="loader-core"></div>
+    </div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span>&lt;</span>TP<span>/&gt;</span>
+            </a>
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+            <nav class="nav-menu" id="navMenu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="about.html" class="nav-link active">
+                    About
+                </a>
+
+                <a href="skills.html" class="nav-link">
+                    Skills
+                </a>
+
+                <a href="projects.html" class="nav-link">
+                    Projects
+                </a>
+
+                <a href="experience.html" class="nav-link">
+                    Experience
+                </a>
+
+                <a href="certifications.html" class="nav-link">
+                    Certifications
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+        <!-- =========================================
+             PAGE HERO
+        ========================================== -->
+
+        <section class="page-hero">
+
+            <div class="container">
+
+                <div class="page-hero-content reveal">
+
+                    <div class="page-label">
+                        About Me
+                    </div>
+
+                    <h1 class="page-title">
+                        Building Ideas<br> Into <span>Technology.</span>
+                    </h1>
+
+                    <p class="page-description">
+                        I am an Electronics & Communication Engineering student passionate about building practical systems that connect hardware, software, automation and intelligent technologies.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             ABOUT INTRO
+        ========================================== -->
+
+        <section class="about-section">
+
+            <div class="container">
+
+                <div class="about-grid">
+
+                    <!-- Visual -->
+
+                    <div class="about-image reveal">
+
+                        <div class="tech-dot dot-1"></div>
+                        <div class="tech-dot dot-2"></div>
+                        <div class="tech-dot dot-3"></div>
+                        <div class="tech-dot dot-4"></div>
+
+                        <!-- Replace this with your photo later -->
+
+                        <div class="about-image-placeholder">
+                            TP
+                        </div>
+
+                    </div>
+
+
+                    <!-- Content -->
+
+                    <div class="about-content reveal">
+
+                        <div class="section-label">
+                            Who I Am
+                        </div>
+
+                        <h2 class="section-title">
+                            Electronics Engineer
+                            <br>
+                            <span class="gradient-text">
+                                & Technology Builder
+                            </span>
+                        </h2>
+
+                        <p>
+                            I am currently pursuing a B.Tech in Electronics & Communication Engineering and developing my skills across embedded systems, IoT, automation, programming and intelligent technologies.
+                        </p>
+
+                        <p>
+                            My approach is simple: understand the problem, explore the technology and build a working solution. I enjoy working at the intersection of hardware and software where electronics can be transformed into useful real-world products.
+                        </p>
+
+                        <p>
+                            From microcontrollers and communication protocols to measurement automation and AI-enabled systems, I continuously work on projects that strengthen both my engineering fundamentals and practical development skills.
+                        </p>
+
+
+                        <div class="about-highlights">
+
+                            <div class="highlight-item">
+                                <strong>Education</strong>
+                                <span>B.Tech — ECE</span>
+                            </div>
+
+                            <div class="highlight-item">
+                                <strong>Focus</strong>
+                                <span>Embedded & IoT</span>
+                            </div>
+
+                            <div class="highlight-item">
+                                <strong>Approach</strong>
+                                <span>Build • Test • Improve</span>
+                            </div>
+
+                            <div class="highlight-item">
+                                <strong>Graduation</strong>
+                                <span>2027</span>
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             EDUCATION
+        ========================================== -->
+
+        <section class="education-section">
+
+            <div class="container">
+
+                <div class="education-header reveal">
+
+                    <div class="section-label">
+                        Education
+                    </div>
+
+                    <h2 class="section-title">
+                        Academic Foundation
+                    </h2>
+
+                    <p class="page-description">
+                        My academic journey is focused on electronics, communication systems, programming and engineering fundamentals.
+                    </p>
+
+                </div>
+
+
+                <div class="education-card reveal">
+
+                    <div class="education-year">
+                        2023 — 2027
+                    </div>
+
+                    <div>
+
+                        <h3 class="education-degree">
+                            B.Tech — Electronics & Communication Engineering
+                        </h3>
+
+                        <div class="education-institute">
+                            Guru Tegh Bahadur 4th Centenary Engineering College
+                        </div>
+
+                        <p class="education-description">
+                            Studying core electronics and communication engineering along with programming, embedded systems, digital systems, communication systems, instrumentation and modern technology applications.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CAREER FOCUS
+        ========================================== -->
+
+        <section class="focus-section">
+
+            <div class="container">
+
+                <div class="focus-header reveal">
+
+                    <div class="section-label">
+                        Career Focus
+                    </div>
+
+                    <h2 class="section-title">
+                        Areas I Want to Build In
+                    </h2>
+
+                    <p class="page-description">
+                        My technical interests span multiple layers of modern engineering — from low-level hardware to intelligent connected systems.
+                    </p>
+
+                </div>
+
+
+                <div class="career-grid">
+
+                    <div class="career-card reveal">
+
+                        <div class="career-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Embedded Systems
+                        </h3>
+
+                        <p>
+                            Microcontrollers, firmware development, communication protocols, sensors and real-time embedded applications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="career-card reveal">
+
+                        <div class="career-number">
+                            02
+                        </div>
+
+                        <h3>
+                            IoT & Automation
+                        </h3>
+
+                        <p>
+                            Connected devices, industrial automation, instrumentation, data acquisition and remote monitoring systems.
+                        </p>
+
+                    </div>
+
+
+                    <div class="career-card reveal">
+
+                        <div class="career-number">
+                            03
+                        </div>
+
+                        <h3>
+                            AI & Intelligent Systems
+                        </h3>
+
+                        <p>
+                            Exploring AI, computer vision, TinyML and intelligent systems for practical engineering applications.
+                        </p>
+
+                    </div>
+
+
+                    <div class="career-card reveal">
+
+                        <div class="career-number">
+                            04
+                        </div>
+
+                        <h3>
+                            Product Development
+                        </h3>
+
+                        <p>
+                            Turning engineering concepts into prototypes, connected products and scalable technology solutions.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             TECHNICAL JOURNEY
+        ========================================== -->
+
+        <section class="journey-section">
+
+            <div class="container">
+
+                <div class="journey-header reveal">
+
+                    <div class="section-label">
+                        My Journey
+                    </div>
+
+                    <h2 class="section-title">
+                        Learning Through Building
+                    </h2>
+
+                    <p class="page-description">
+                        A continuous journey of learning, experimentation, internships and engineering projects.
+                    </p>
+
+                </div>
+
+
+                <div class="timeline">
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            2023
+                        </div>
+
+                        <h3>
+                            Started Electronics & Communication Engineering
+                        </h3>
+
+                        <p>
+                            Began developing a strong foundation in electronics, programming, digital systems and engineering mathematics.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            2024
+                        </div>
+
+                        <h3>
+                            Embedded Systems & Hardware Exploration
+                        </h3>
+
+                        <p>
+                            Started working with microcontrollers, sensors, communication protocols and practical electronics projects.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            2025
+                        </div>
+
+                        <h3>
+                            Industry Internship & Engineering Projects
+                        </h3>
+
+                        <p>
+                            Gained practical exposure through technical internships and worked on embedded communication, measurement automation and engineering projects.
+                        </p>
+
+                    </div>
+
+
+                    <div class="timeline-item reveal">
+
+                        <div class="timeline-dot"></div>
+
+                        <div class="timeline-date">
+                            2026 — Present
+                        </div>
+
+                        <h3>
+                            Building Intelligent Connected Systems
+                        </h3>
+
+                        <p>
+                            Expanding into IoT, AI, automation, cloud-connected systems and product-oriented engineering.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+        ========================================== -->
+
+        <section class="about-cta">
+
+            <div class="container">
+
+                <div class="about-cta-box reveal">
+
+                    <h2>
+                        Let's Build Something
+                        <span class="gradient-text">Meaningful.</span>
+                    </h2>
+
+                    <p>
+                        Interested in embedded systems, IoT, automation or intelligent technology? Explore my projects and technical skills.
+                    </p>
+
+                    <a href="projects.html" class="btn btn-primary">
+                        Explore Projects
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    <span>&lt;</span>TP<span>/&gt;</span>
+                </a>
+
+                <p>
+                    Electronics & Communication Engineering student building technology with purpose.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span class="current-year"></span> Tridev Patel. All Rights Reserved.
+            </p>
+
+
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         JAVASCRIPT
+    ========================================== -->
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

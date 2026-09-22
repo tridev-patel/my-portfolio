@@ -1,0 +1,1229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Certifications | Tridev Patel</title>
+
+    <meta name="description" content="Certifications, internships and technical training completed by Tridev Patel.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+    <style>
+        /* =========================================
+           CERTIFICATIONS PAGE
+        ========================================= */
+        
+        .cert-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cert-hero-content {
+            max-width: 850px;
+        }
+        
+        .page-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .page-label::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .page-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+        
+        .page-title span {
+            color: var(--primary);
+        }
+        
+        .page-description {
+            max-width: 720px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        /* =========================================
+           CERTIFICATION SECTION
+        ========================================= */
+        
+        .cert-section {
+            padding: 100px 0;
+        }
+        
+        .cert-header {
+            max-width: 700px;
+            margin-bottom: 55px;
+        }
+        
+        .section-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 18px;
+        }
+        /* =========================================
+           CERTIFICATE FILTER
+        ========================================= */
+        
+        .cert-filter {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            margin-bottom: 40px;
+        }
+        
+        .cert-filter-btn {
+            padding: 9px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-muted);
+            font-family: inherit;
+            font-size: 0.82rem;
+            cursor: pointer;
+            transition: 0.25s ease;
+        }
+        
+        .cert-filter-btn:hover,
+        .cert-filter-btn.active {
+            color: var(--primary);
+            border-color: rgba(0, 217, 255, 0.4);
+            background: rgba(0, 217, 255, 0.06);
+        }
+        /* =========================================
+           CERTIFICATE GRID
+        ========================================= */
+        
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        /* =========================================
+           CERTIFICATE CARD
+        ========================================= */
+        
+        .cert-card {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            overflow: hidden;
+            background: rgba(255, 255, 255, 0.02);
+            transition: 0.35s ease;
+        }
+        
+        .cert-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0, 217, 255, 0.4);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+        }
+        
+        .cert-card.hidden {
+            display: none;
+        }
+        /* =========================================
+           CERTIFICATE IMAGE
+        ========================================= */
+        
+        .cert-image {
+            height: 280px;
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient( 135deg, rgba(0, 217, 255, 0.07), rgba(255, 255, 255, 0.015));
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .cert-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+            transition: 0.5s ease;
+        }
+        
+        .cert-card:hover .cert-image img {
+            transform: scale(1.04);
+        }
+        /* =========================================
+           CERTIFICATE PLACEHOLDER
+        ========================================= */
+        
+        .cert-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            color: var(--primary);
+        }
+        
+        .cert-placeholder-icon {
+            width: 70px;
+            height: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 217, 255, 0.3);
+            border-radius: 16px;
+            background: rgba(0, 217, 255, 0.05);
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+        }
+        
+        .cert-placeholder span {
+            color: var(--text-muted);
+            font-size: 0.75rem;
+        }
+        /* =========================================
+           CERT BADGE
+        ========================================= */
+        
+        .cert-badge {
+            position: absolute;
+            top: 18px;
+            left: 18px;
+            padding: 7px 10px;
+            border-radius: 7px;
+            background: rgba(6, 10, 19, 0.8);
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            color: var(--primary);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            z-index: 2;
+        }
+        /* =========================================
+           CERT CONTENT
+        ========================================= */
+        
+        .cert-content {
+            padding: 28px;
+        }
+        
+        .cert-title {
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--white);
+            font-size: 1.3rem;
+            margin-bottom: 8px;
+        }
+        
+        .cert-issuer {
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+        
+        .cert-description {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+        
+        .cert-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 22px;
+        }
+        
+        .cert-meta span {
+            padding: 6px 9px;
+            border-radius: 6px;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            font-size: 0.72rem;
+        }
+        
+        .cert-link {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+        
+        .cert-link:hover {
+            color: var(--primary);
+        }
+        /* =========================================
+           CREDENTIAL SUMMARY
+        ========================================= */
+        
+        .credential-section {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .credential-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+        
+        .credential-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        
+        .credential-card {
+            text-align: center;
+            padding: 30px 20px;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: 0.3s ease;
+        }
+        
+        .credential-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 217, 255, 0.35);
+        }
+        
+        .credential-number {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 2rem;
+            color: var(--primary);
+            font-weight: 700;
+            margin-bottom: 7px;
+        }
+        
+        .credential-label {
+            color: var(--text-muted);
+            font-size: 0.8rem;
+        }
+        /* =========================================
+           CTA
+        ========================================= */
+        
+        .cert-cta {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .cert-cta-box {
+            padding: 70px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            background: radial-gradient( circle at center, rgba(0, 217, 255, 0.08), transparent 65%);
+        }
+        
+        .cert-cta h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        
+        .cert-cta p {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        
+        @media (max-width: 950px) {
+            .credential-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .cert-hero {
+                min-height: 60vh;
+            }
+            .cert-section,
+            .credential-section,
+            .cert-cta {
+                padding: 70px 0;
+            }
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+            .cert-image {
+                height: 240px;
+            }
+            .page-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .credential-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .credential-number {
+                font-size: 1.6rem;
+            }
+            .cert-content {
+                padding: 24px;
+            }
+            .cert-cta-box {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
+
+    <div class="preloader">
+        <div class="loader-core"></div>
+    </div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span>&lt;</span>TP<span>/&gt;</span>
+            </a>
+
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <nav class="nav-menu" id="navMenu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="skills.html" class="nav-link">
+                    Skills
+                </a>
+
+                <a href="projects.html" class="nav-link">
+                    Projects
+                </a>
+
+                <a href="experience.html" class="nav-link">
+                    Experience
+                </a>
+
+                <a href="certifications.html" class="nav-link active">
+                    Certifications
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="cert-hero">
+
+            <div class="container">
+
+                <div class="cert-hero-content reveal">
+
+                    <div class="page-label">
+                        Certifications
+                    </div>
+
+                    <h1 class="page-title">
+                        Proof Of<br>
+                        <span>Continuous Learning.</span>
+                    </h1>
+
+                    <p class="page-description">
+                        Certifications, internships and technical training that complement my academic foundation and demonstrate hands-on learning across electronics and technology.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CERTIFICATES
+        ========================================== -->
+
+        <section class="cert-section">
+
+            <div class="container">
+
+
+                <div class="cert-header reveal">
+
+                    <div class="section-label">
+                        Credentials
+                    </div>
+
+                    <h2 class="section-title">
+                        Certifications & Training
+                    </h2>
+
+                    <p class="page-description">
+                        A collection of technical credentials and professional learning experiences.
+                    </p>
+
+                </div>
+
+
+                <!-- FILTER -->
+
+                <div class="cert-filter reveal">
+
+                    <button class="cert-filter-btn active" data-filter="all">
+                        All
+                    </button>
+
+                    <button class="cert-filter-btn" data-filter="internship">
+                        Internships
+                    </button>
+
+                    <button class="cert-filter-btn" data-filter="technical">
+                        Technical
+                    </button>
+
+                    <button class="cert-filter-btn" data-filter="training">
+                        Training
+                    </button>
+
+                </div>
+
+
+                <!-- CERTIFICATE GRID -->
+
+                <div class="cert-grid">
+
+
+                    <!-- =================================
+                         DRDO CERTIFICATE
+                    ================================== -->
+
+                    <article class="cert-card reveal" data-category="internship">
+
+                        <div class="cert-image">
+
+                            <div class="cert-badge">
+                                Internship
+                            </div>
+
+                            <img src="assets/images/certificates/drdo-certificate.jpg" alt="DRDO Internship Certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                            <div class="cert-placeholder" style="display:none;">
+
+                                <div class="cert-placeholder-icon">
+                                    DRDO
+                                </div>
+
+                                <span>
+                                    Add certificate image
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="cert-content">
+
+                            <h3 class="cert-title">
+                                Industrial Training / Internship
+                            </h3>
+
+                            <div class="cert-issuer">
+                                DRDO — Scientific Analysis Group
+                            </div>
+
+                            <p class="cert-description">
+                                Technical internship focused on embedded driver development and SPI, I2C and UART communication protocols.
+                            </p>
+
+
+                            <div class="cert-meta">
+
+                                <span>
+                                    2025
+                                </span>
+
+                                <span>
+                                    Embedded Systems
+                                </span>
+
+                                <span>
+                                    DRDO
+                                </span>
+
+                            </div>
+
+
+                            <a href="#" class="cert-link">
+                                View Certificate →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================
+                         NPL CERTIFICATE
+                    ================================== -->
+
+                    <article class="cert-card reveal" data-category="internship">
+
+                        <div class="cert-image">
+
+                            <div class="cert-badge">
+                                Internship
+                            </div>
+
+                            <img src="assets/images/certificates/npl-certificate.jpg" alt="CSIR NPL Internship Certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                            <div class="cert-placeholder" style="display:none;">
+
+                                <div class="cert-placeholder-icon">
+                                    NPL
+                                </div>
+
+                                <span>
+                                    Add certificate image
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="cert-content">
+
+                            <h3 class="cert-title">
+                                Metrology & Measurement Internship
+                            </h3>
+
+                            <div class="cert-issuer">
+                                CSIR — National Physical Laboratory
+                            </div>
+
+                            <p class="cert-description">
+                                Practical exposure to metrology, measurement automation, LCR measurement and Python-based instrument control.
+                            </p>
+
+
+                            <div class="cert-meta">
+
+                                <span>
+                                    CSIR-NPL
+                                </span>
+
+                                <span>
+                                    Metrology
+                                </span>
+
+                                <span>
+                                    Automation
+                                </span>
+
+                            </div>
+
+
+                            <a href="#" class="cert-link">
+                                View Certificate →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================
+                         DRONE FORENSIC
+                    ================================== -->
+
+                    <article class="cert-card reveal" data-category="technical training">
+
+                        <div class="cert-image">
+
+                            <div class="cert-badge">
+                                Training
+                            </div>
+
+                            <img src="assets/images/certificates/drone-forensic.jpg" alt="Drone Forensic Training Certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                            <div class="cert-placeholder" style="display:none;">
+
+                                <div class="cert-placeholder-icon">
+                                    DF
+                                </div>
+
+                                <span>
+                                    Add certificate image
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="cert-content">
+
+                            <h3 class="cert-title">
+                                Drone Forensics Training
+                            </h3>
+
+                            <div class="cert-issuer">
+                                Technical Training Program
+                            </div>
+
+                            <p class="cert-description">
+                                One-week technical training focused on drone technology and forensic concepts.
+                            </p>
+
+
+                            <div class="cert-meta">
+
+                                <span>
+                                    Training
+                                </span>
+
+                                <span>
+                                    Drones
+                                </span>
+
+                                <span>
+                                    Forensics
+                                </span>
+
+                            </div>
+
+
+                            <a href="#" class="cert-link">
+                                View Certificate →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================
+                         AI / ML
+                    ================================== -->
+
+                    <article class="cert-card reveal" data-category="technical">
+
+                        <div class="cert-image">
+
+                            <div class="cert-badge">
+                                Technical
+                            </div>
+
+                            <img src="assets/images/certificates/ai-ml.jpg" alt="AI ML Certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                            <div class="cert-placeholder" style="display:none;">
+
+                                <div class="cert-placeholder-icon">
+                                    AI
+                                </div>
+
+                                <span>
+                                    Add certificate image
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="cert-content">
+
+                            <h3 class="cert-title">
+                                AI / ML Technical Learning
+                            </h3>
+
+                            <div class="cert-issuer">
+                                Technical Program
+                            </div>
+
+                            <p class="cert-description">
+                                Learning and hands-on exploration of artificial intelligence, machine learning and intelligent systems.
+                            </p>
+
+
+                            <div class="cert-meta">
+
+                                <span>
+                                    AI
+                                </span>
+
+                                <span>
+                                    ML
+                                </span>
+
+                                <span>
+                                    Technical
+                                </span>
+
+                            </div>
+
+
+                            <a href="#" class="cert-link">
+                                View Certificate →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================
+                         EMBEDDED
+                    ================================== -->
+
+                    <article class="cert-card reveal" data-category="technical">
+
+                        <div class="cert-image">
+
+                            <div class="cert-badge">
+                                Technical
+                            </div>
+
+                            <img src="assets/images/certificates/embedded-systems.jpg" alt="Embedded Systems Certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                            <div class="cert-placeholder" style="display:none;">
+
+                                <div class="cert-placeholder-icon">
+                                    EMB
+                                </div>
+
+                                <span>
+                                    Add certificate image
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="cert-content">
+
+                            <h3 class="cert-title">
+                                Embedded Systems Training
+                            </h3>
+
+                            <div class="cert-issuer">
+                                Technical Program
+                            </div>
+
+                            <p class="cert-description">
+                                Training and practical learning related to microcontrollers, embedded programming and hardware interfaces.
+                            </p>
+
+
+                            <div class="cert-meta">
+
+                                <span>
+                                    Embedded
+                                </span>
+
+                                <span>
+                                    MCU
+                                </span>
+
+                                <span>
+                                    Firmware
+                                </span>
+
+                            </div>
+
+
+                            <a href="#" class="cert-link">
+                                View Certificate →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- =================================
+                         OTHER TRAINING
+                    ================================== -->
+
+                    <article class="cert-card reveal" data-category="training">
+
+                        <div class="cert-image">
+
+                            <div class="cert-badge">
+                                Training
+                            </div>
+
+                            <img src="assets/images/certificates/technical-training.jpg" alt="Technical Training Certificate" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+
+                            <div class="cert-placeholder" style="display:none;">
+
+                                <div class="cert-placeholder-icon">
+                                    TR
+                                </div>
+
+                                <span>
+                                    Add certificate image
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="cert-content">
+
+                            <h3 class="cert-title">
+                                Technical Training
+                            </h3>
+
+                            <div class="cert-issuer">
+                                Professional Development
+                            </div>
+
+                            <p class="cert-description">
+                                Additional technical learning and professional development programs.
+                            </p>
+
+
+                            <div class="cert-meta">
+
+                                <span>
+                                    Training
+                                </span>
+
+                                <span>
+                                    Technology
+                                </span>
+
+                            </div>
+
+
+                            <a href="#" class="cert-link">
+                                View Certificate →
+                            </a>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CREDENTIAL SUMMARY
+        ========================================== -->
+
+        <section class="credential-section">
+
+            <div class="container">
+
+
+                <div class="credential-header reveal">
+
+                    <div class="section-label">
+                        Credential Snapshot
+                    </div>
+
+                    <h2 class="section-title">
+                        Continuous Development
+                    </h2>
+
+                    <p class="page-description">
+                        Building knowledge through formal education, internships and independent technical learning.
+                    </p>
+
+                </div>
+
+
+                <div class="credential-grid">
+
+
+                    <div class="credential-card reveal">
+
+                        <div class="credential-number">
+                            02
+                        </div>
+
+                        <div class="credential-label">
+                            Technical Internships
+                        </div>
+
+                    </div>
+
+
+                    <div class="credential-card reveal">
+
+                        <div class="credential-number">
+                            06+
+                        </div>
+
+                        <div class="credential-label">
+                            Learning Areas
+                        </div>
+
+                    </div>
+
+
+                    <div class="credential-card reveal">
+
+                        <div class="credential-number">
+                            10+
+                        </div>
+
+                        <div class="credential-label">
+                            Technologies Explored
+                        </div>
+
+                    </div>
+
+
+                    <div class="credential-card reveal">
+
+                        <div class="credential-number">
+                            2027
+                        </div>
+
+                        <div class="credential-label">
+                            Expected Graduation
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+        ========================================== -->
+
+        <section class="cert-cta">
+
+            <div class="container">
+
+                <div class="cert-cta-box reveal">
+
+                    <h2>
+                        Explore My
+                        <span class="gradient-text">
+                            Experience.
+                        </span>
+                    </h2>
+
+                    <p>
+                        See how I have applied my technical knowledge during internships and engineering work.
+                    </p>
+
+                    <a href="experience.html" class="btn btn-primary">
+                        View Experience
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    <span>&lt;</span>TP<span>/&gt;</span>
+                </a>
+
+                <p>
+                    Electronics & Communication Engineering student building technology with purpose.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span class="current-year"></span> Tridev Patel. All Rights Reserved.
+            </p>
+
+            <p>
+                Built with HTML, CSS & JavaScript.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         CERTIFICATE FILTER
+    ========================================== -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const filterButtons =
+                document.querySelectorAll(".cert-filter-btn");
+
+            const certificateCards =
+                document.querySelectorAll(".cert-card");
+
+
+            filterButtons.forEach((button) => {
+
+                button.addEventListener("click", () => {
+
+                    const filter =
+                        button.getAttribute("data-filter");
+
+
+                    filterButtons.forEach((btn) => {
+                        btn.classList.remove("active");
+                    });
+
+                    button.classList.add("active");
+
+
+                    certificateCards.forEach((card) => {
+
+                        const categories =
+                            card.getAttribute("data-category") || "";
+
+                        if (
+                            filter === "all" ||
+                            categories.includes(filter)
+                        ) {
+                            card.classList.remove("hidden");
+                        } else {
+                            card.classList.add("hidden");
+                        }
+
+                    });
+
+                });
+
+            });
+
+        });
+    </script>
+
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

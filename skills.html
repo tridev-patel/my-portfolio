@@ -1,0 +1,955 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Skills | Tridev Patel</title>
+
+    <meta name="description" content="Technical skills of Tridev Patel including Embedded Systems, IoT, Programming, AI, Automation and Engineering Tools.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* =========================================
+           SKILLS PAGE
+        ========================================= */
+        
+        .skills-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .skills-hero-content {
+            max-width: 850px;
+        }
+        
+        .page-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .page-label::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .page-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+        
+        .page-title span {
+            color: var(--primary);
+        }
+        
+        .page-description {
+            max-width: 720px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        /* =========================================
+           SKILL CATEGORIES
+        ========================================= */
+        
+        .skills-section {
+            padding: 100px 0;
+        }
+        
+        .skills-header {
+            max-width: 700px;
+            margin-bottom: 55px;
+        }
+        
+        .section-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 18px;
+        }
+        /* =========================================
+           SKILL GRID
+        ========================================= */
+        
+        .skills-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 22px;
+        }
+        
+        .skill-category {
+            padding: 32px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.02);
+            position: relative;
+            overflow: hidden;
+            transition: 0.35s ease;
+        }
+        
+        .skill-category::before {
+            content: "";
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            right: -90px;
+            top: -90px;
+            border-radius: 50%;
+            background: rgba(0, 217, 255, 0.05);
+            transition: 0.35s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 217, 255, 0.4);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.2);
+        }
+        
+        .skill-category:hover::before {
+            transform: scale(1.4);
+        }
+        
+        .skill-icon {
+            width: 52px;
+            height: 52px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            border-radius: 14px;
+            color: var(--primary);
+            background: rgba(0, 217, 255, 0.06);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 22px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .skill-category h3 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.35rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 1;
+        }
+        /* =========================================
+           SKILL TAGS
+        ========================================= */
+        
+        .skill-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 9px;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .skill-tag {
+            padding: 8px 13px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: rgba(255, 255, 255, 0.025);
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            transition: 0.25s ease;
+        }
+        
+        .skill-tag:hover {
+            color: var(--primary);
+            border-color: rgba(0, 217, 255, 0.35);
+            background: rgba(0, 217, 255, 0.06);
+        }
+        /* =========================================
+           TECHNOLOGY STACK
+        ========================================= */
+        
+        .stack-section {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .stack-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+        
+        .stack-cloud {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px;
+            max-width: 900px;
+            margin: auto;
+        }
+        
+        .stack-item {
+            padding: 12px 18px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            color: var(--text-muted);
+            background: rgba(255, 255, 255, 0.02);
+            transition: 0.3s ease;
+            font-size: 0.9rem;
+        }
+        
+        .stack-item:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 217, 255, 0.08);
+        }
+        /* =========================================
+           LEARNING APPROACH
+        ========================================= */
+        
+        .learning-section {
+            padding: 100px 0;
+        }
+        
+        .learning-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 22px;
+            margin-top: 55px;
+        }
+        
+        .learning-card {
+            padding: 35px 30px;
+            border: 1px solid var(--border);
+            border-radius: 18px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: 0.3s ease;
+        }
+        
+        .learning-card:hover {
+            transform: translateY(-6px);
+            border-color: rgba(0, 217, 255, 0.35);
+        }
+        
+        .learning-number {
+            font-family: "Space Grotesk", sans-serif;
+            color: rgba(0, 217, 255, 0.5);
+            font-size: 0.85rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+        }
+        
+        .learning-card h3 {
+            color: var(--white);
+            font-family: "Space Grotesk", sans-serif;
+            margin-bottom: 12px;
+        }
+        
+        .learning-card p {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.9rem;
+        }
+        /* =========================================
+           SKILL CTA
+        ========================================= */
+        
+        .skills-cta {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .skills-cta-box {
+            padding: 70px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            background: radial-gradient( circle at center, rgba(0, 217, 255, 0.08), transparent 65%);
+        }
+        
+        .skills-cta h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        
+        .skills-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        
+        @media (max-width: 850px) {
+            .skills-grid {
+                grid-template-columns: 1fr;
+            }
+            .learning-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .skills-hero {
+                min-height: 60vh;
+            }
+            .skills-section,
+            .stack-section,
+            .learning-section,
+            .skills-cta {
+                padding: 70px 0;
+            }
+            .skill-category {
+                padding: 25px;
+            }
+            .page-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .page-description {
+                font-size: 0.95rem;
+            }
+            .skill-tag {
+                font-size: 0.78rem;
+                padding: 7px 10px;
+            }
+            .stack-item {
+                font-size: 0.82rem;
+                padding: 10px 13px;
+            }
+            .skills-cta-box {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
+
+    <div class="preloader">
+        <div class="loader-core"></div>
+    </div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span>&lt;</span>TP<span>/&gt;</span>
+            </a>
+
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <nav class="nav-menu" id="navMenu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="skills.html" class="nav-link active">
+                    Skills
+                </a>
+
+                <a href="projects.html" class="nav-link">
+                    Projects
+                </a>
+
+                <a href="experience.html" class="nav-link">
+                    Experience
+                </a>
+
+                <a href="certifications.html" class="nav-link">
+                    Certifications
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="skills-hero">
+
+            <div class="container">
+
+                <div class="skills-hero-content reveal">
+
+                    <div class="page-label">
+                        Technical Skills
+                    </div>
+
+                    <h1 class="page-title">
+                        Tools I Use To<br>
+                        <span>Build Systems.</span>
+                    </h1>
+
+                    <p class="page-description">
+                        A combination of electronics, embedded programming, software development, automation and intelligent technologies that I use to turn ideas into working prototypes and systems.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             SKILL CATEGORIES
+        ========================================== -->
+
+        <section class="skills-section">
+
+            <div class="container">
+
+                <div class="skills-header reveal">
+
+                    <div class="section-label">
+                        Core Competencies
+                    </div>
+
+                    <h2 class="section-title">
+                        Technical Skillset
+                    </h2>
+
+                    <p class="page-description">
+                        My skills cover both hardware and software, allowing me to work across the complete engineering stack.
+                    </p>
+
+                </div>
+
+
+                <div class="skills-grid">
+
+
+                    <!-- Embedded -->
+
+                    <div class="skill-category reveal">
+
+                        <div class="skill-icon">
+                            MCU
+                        </div>
+
+                        <h3>
+                            Embedded Systems
+                        </h3>
+
+                        <div class="skill-tags">
+
+                            <span class="skill-tag">STM32</span>
+                            <span class="skill-tag">8051</span>
+                            <span class="skill-tag">8085</span>
+                            <span class="skill-tag">8086</span>
+                            <span class="skill-tag">Arduino</span>
+                            <span class="skill-tag">ESP32</span>
+                            <span class="skill-tag">ESP32-S3</span>
+                            <span class="skill-tag">Teensy</span>
+                            <span class="skill-tag">FreeRTOS</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Communication -->
+
+                    <div class="skill-category reveal">
+
+                        <div class="skill-icon">
+                            COM
+                        </div>
+
+                        <h3>
+                            Communication Protocols
+                        </h3>
+
+                        <div class="skill-tags">
+
+                            <span class="skill-tag">SPI</span>
+                            <span class="skill-tag">I2C</span>
+                            <span class="skill-tag">UART</span>
+                            <span class="skill-tag">CAN</span>
+                            <span class="skill-tag">MQTT</span>
+                            <span class="skill-tag">HTTP</span>
+                            <span class="skill-tag">REST API</span>
+                            <span class="skill-tag">WebSocket</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Programming -->
+
+                    <div class="skill-category reveal">
+
+                        <div class="skill-icon">
+                            &lt;/&gt;
+                        </div>
+
+                        <h3>
+                            Programming
+                        </h3>
+
+                        <div class="skill-tags">
+
+                            <span class="skill-tag">C</span>
+                            <span class="skill-tag">C++</span>
+                            <span class="skill-tag">Python</span>
+                            <span class="skill-tag">JavaScript</span>
+                            <span class="skill-tag">HTML</span>
+                            <span class="skill-tag">CSS</span>
+                            <span class="skill-tag">SQL</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- IoT -->
+
+                    <div class="skill-category reveal">
+
+                        <div class="skill-icon">
+                            IoT
+                        </div>
+
+                        <h3>
+                            IoT & Automation
+                        </h3>
+
+                        <div class="skill-tags">
+
+                            <span class="skill-tag">IoT Systems</span>
+                            <span class="skill-tag">Sensor Integration</span>
+                            <span class="skill-tag">Data Acquisition</span>
+                            <span class="skill-tag">MQTT</span>
+                            <span class="skill-tag">Cloud IoT</span>
+                            <span class="skill-tag">Automation</span>
+                            <span class="skill-tag">Remote Monitoring</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- AI -->
+
+                    <div class="skill-category reveal">
+
+                        <div class="skill-icon">
+                            AI
+                        </div>
+
+                        <h3>
+                            AI & Intelligent Systems
+                        </h3>
+
+                        <div class="skill-tags">
+
+                            <span class="skill-tag">Machine Learning</span>
+                            <span class="skill-tag">TinyML</span>
+                            <span class="skill-tag">Computer Vision</span>
+                            <span class="skill-tag">OpenCV</span>
+                            <span class="skill-tag">TensorFlow</span>
+                            <span class="skill-tag">Edge AI</span>
+                            <span class="skill-tag">AIoT</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Instrumentation -->
+
+                    <div class="skill-category reveal">
+
+                        <div class="skill-icon">
+                            LAB
+                        </div>
+
+                        <h3>
+                            Instrumentation & Measurement
+                        </h3>
+
+                        <div class="skill-tags">
+
+                            <span class="skill-tag">LCR Measurement</span>
+                            <span class="skill-tag">PyVISA</span>
+                            <span class="skill-tag">NI-VISA</span>
+                            <span class="skill-tag">Measurement Automation</span>
+                            <span class="skill-tag">Data Logging</span>
+                            <span class="skill-tag">Python Automation</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Development -->
+
+                    <div class="skill-category reveal">
+
+                        <div class="skill-icon">
+                            WEB
+                        </div>
+
+                        <h3>
+                            Web & Backend
+                        </h3>
+
+                        <div class="skill-tags">
+
+                            <span class="skill-tag">Flask</span>
+                            <span class="skill-tag">FastAPI</span>
+                            <span class="skill-tag">Node.js</span>
+                            <span class="skill-tag">MongoDB</span>
+                            <span class="skill-tag">REST API</span>
+                            <span class="skill-tag">Dashboard Development</span>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- Engineering -->
+
+                    <div class="skill-category reveal">
+
+                        <div class="skill-icon">
+                            ENG
+                        </div>
+
+                        <h3>
+                            Engineering Tools
+                        </h3>
+
+                        <div class="skill-tags">
+
+                            <span class="skill-tag">STM32CubeIDE</span>
+                            <span class="skill-tag">MATLAB</span>
+                            <span class="skill-tag">Multisim</span>
+                            <span class="skill-tag">LabVIEW</span>
+                            <span class="skill-tag">VS Code</span>
+                            <span class="skill-tag">Git</span>
+                            <span class="skill-tag">GitHub</span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             TECHNOLOGY STACK
+        ========================================== -->
+
+        <section class="stack-section">
+
+            <div class="container">
+
+                <div class="stack-header reveal">
+
+                    <div class="section-label">
+                        Technology Stack
+                    </div>
+
+                    <h2 class="section-title">
+                        Technologies I Work With
+                    </h2>
+
+                    <p class="page-description">
+                        A growing collection of technologies I have explored through projects, internships and self-learning.
+                    </p>
+
+                </div>
+
+
+                <div class="stack-cloud reveal">
+
+                    <span class="stack-item">STM32</span>
+                    <span class="stack-item">ESP32</span>
+                    <span class="stack-item">Arduino</span>
+                    <span class="stack-item">Python</span>
+                    <span class="stack-item">C</span>
+                    <span class="stack-item">C++</span>
+                    <span class="stack-item">JavaScript</span>
+                    <span class="stack-item">HTML</span>
+                    <span class="stack-item">CSS</span>
+                    <span class="stack-item">MQTT</span>
+                    <span class="stack-item">PyVISA</span>
+                    <span class="stack-item">NI-VISA</span>
+                    <span class="stack-item">Flask</span>
+                    <span class="stack-item">FastAPI</span>
+                    <span class="stack-item">Node.js</span>
+                    <span class="stack-item">MongoDB</span>
+                    <span class="stack-item">OpenCV</span>
+                    <span class="stack-item">TensorFlow</span>
+                    <span class="stack-item">MATLAB</span>
+                    <span class="stack-item">LabVIEW</span>
+                    <span class="stack-item">Git</span>
+                    <span class="stack-item">GitHub</span>
+                    <span class="stack-item">VS Code</span>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             LEARNING APPROACH
+        ========================================== -->
+
+        <section class="learning-section">
+
+            <div class="container">
+
+                <div class="skills-header reveal">
+
+                    <div class="section-label">
+                        How I Learn
+                    </div>
+
+                    <h2 class="section-title">
+                        Learn. Build. Debug.
+                    </h2>
+
+                    <p class="page-description">
+                        I prefer practical learning where concepts are converted into working systems and tested against real-world requirements.
+                    </p>
+
+                </div>
+
+
+                <div class="learning-grid">
+
+
+                    <div class="learning-card reveal">
+
+                        <div class="learning-number">
+                            01
+                        </div>
+
+                        <h3>
+                            Understand
+                        </h3>
+
+                        <p>
+                            Start with the fundamentals and understand how the underlying hardware, software or protocol actually works.
+                        </p>
+
+                    </div>
+
+
+                    <div class="learning-card reveal">
+
+                        <div class="learning-number">
+                            02
+                        </div>
+
+                        <h3>
+                            Build
+                        </h3>
+
+                        <p>
+                            Convert concepts into prototypes using development boards, sensors, software and measurement tools.
+                        </p>
+
+                    </div>
+
+
+                    <div class="learning-card reveal">
+
+                        <div class="learning-number">
+                            03
+                        </div>
+
+                        <h3>
+                            Improve
+                        </h3>
+
+                        <p>
+                            Debug, measure, optimize and document the system until it becomes more reliable and practical.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+        ========================================== -->
+
+        <section class="skills-cta">
+
+            <div class="container">
+
+                <div class="skills-cta-box reveal">
+
+                    <h2>
+                        Want to See These Skills
+                        <span class="gradient-text">In Action?</span>
+                    </h2>
+
+                    <p>
+                        Explore the engineering projects where I have applied these technologies to build practical systems.
+                    </p>
+
+                    <a href="projects.html" class="btn btn-primary">
+                        View My Projects
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    <span>&lt;</span>TP<span>/&gt;</span>
+                </a>
+
+                <p>
+                    Electronics & Communication Engineering student building technology with purpose.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span class="current-year"></span> Tridev Patel. All Rights Reserved.
+            </p>
+
+            <p>
+                Built with HTML, CSS & JavaScript.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,1091 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Experience | Tridev Patel</title>
+
+    <meta name="description" content="Professional experience and internships of Tridev Patel in Embedded Systems, Measurement Automation and Electronics Engineering.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+    <style>
+        /* =========================================
+           EXPERIENCE PAGE
+        ========================================= */
+        
+        .experience-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .experience-hero-content {
+            max-width: 850px;
+        }
+        
+        .page-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .page-label::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .page-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+        
+        .page-title span {
+            color: var(--primary);
+        }
+        
+        .page-description {
+            max-width: 720px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        /* =========================================
+           EXPERIENCE SECTION
+        ========================================= */
+        
+        .experience-section {
+            padding: 100px 0;
+        }
+        
+        .section-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 18px;
+        }
+        
+        .experience-header {
+            max-width: 700px;
+            margin-bottom: 65px;
+        }
+        /* =========================================
+           EXPERIENCE TIMELINE
+        ========================================= */
+        
+        .experience-timeline {
+            position: relative;
+            max-width: 1000px;
+            margin: auto;
+        }
+        
+        .experience-timeline::before {
+            content: "";
+            position: absolute;
+            left: 15px;
+            top: 0;
+            bottom: 0;
+            width: 1px;
+            background: linear-gradient( to bottom, var(--primary), rgba(0, 217, 255, 0.05));
+        }
+        /* =========================================
+           EXPERIENCE ITEM
+        ========================================= */
+        
+        .experience-item {
+            position: relative;
+            padding-left: 65px;
+            margin-bottom: 70px;
+        }
+        
+        .experience-dot {
+            position: absolute;
+            left: 8px;
+            top: 5px;
+            width: 15px;
+            height: 15px;
+            border-radius: 50%;
+            background: var(--primary);
+            box-shadow: 0 0 0 5px rgba(0, 217, 255, 0.08), 0 0 25px rgba(0, 217, 255, 0.6);
+            z-index: 2;
+        }
+        /* =========================================
+           EXPERIENCE CARD
+        ========================================= */
+        
+        .experience-card {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            overflow: hidden;
+            transition: 0.35s ease;
+        }
+        
+        .experience-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 217, 255, 0.4);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.22);
+        }
+        
+        .experience-top {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            gap: 30px;
+            padding: 35px 35px 25px;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .experience-role {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.6rem;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        
+        .experience-company {
+            color: var(--primary);
+            font-size: 0.95rem;
+            font-weight: 600;
+        }
+        
+        .experience-date {
+            white-space: nowrap;
+            padding: 8px 12px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 8px;
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            background: rgba(0, 217, 255, 0.03);
+        }
+        /* =========================================
+           EXPERIENCE BODY
+        ========================================= */
+        
+        .experience-body {
+            padding: 30px 35px 35px;
+        }
+        
+        .experience-project {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .experience-project strong {
+            color: var(--white);
+        }
+        
+        .responsibility-title {
+            color: var(--white);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1rem;
+            margin-bottom: 15px;
+        }
+        
+        .responsibilities {
+            list-style: none;
+            margin-bottom: 28px;
+        }
+        
+        .responsibilities li {
+            position: relative;
+            padding-left: 22px;
+            color: var(--text-muted);
+            line-height: 1.7;
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+        }
+        
+        .responsibilities li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        /* =========================================
+           TECH TAGS
+        ========================================= */
+        
+        .experience-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+        
+        .experience-tag {
+            padding: 7px 11px;
+            border: 1px solid rgba(0, 217, 255, 0.15);
+            border-radius: 7px;
+            background: rgba(0, 217, 255, 0.04);
+            color: var(--primary);
+            font-size: 0.75rem;
+        }
+        /* =========================================
+           EXPERIENCE HIGHLIGHTS
+        ========================================= */
+        
+        .highlights-section {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .highlights-header {
+            text-align: center;
+            max-width: 700px;
+            margin: 0 auto 55px;
+        }
+        
+        .highlights-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+        }
+        
+        .highlight-card {
+            padding: 30px 22px;
+            text-align: center;
+            border: 1px solid var(--border);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: 0.3s ease;
+        }
+        
+        .highlight-card:hover {
+            transform: translateY(-5px);
+            border-color: rgba(0, 217, 255, 0.35);
+        }
+        
+        .highlight-value {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 8px;
+        }
+        
+        .highlight-label {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+        }
+        /* =========================================
+           LEARNING SECTION
+        ========================================= */
+        
+        .experience-learning {
+            padding: 100px 0;
+        }
+        
+        .learning-layout {
+            display: grid;
+            grid-template-columns: 0.8fr 1.2fr;
+            gap: 70px;
+            align-items: start;
+        }
+        
+        .learning-intro {
+            position: sticky;
+            top: 120px;
+        }
+        
+        .learning-intro p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        
+        .learning-list {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .learning-item {
+            padding: 24px;
+            border: 1px solid var(--border);
+            border-radius: 14px;
+            background: rgba(255, 255, 255, 0.02);
+            transition: 0.3s ease;
+        }
+        
+        .learning-item:hover {
+            border-color: rgba(0, 217, 255, 0.35);
+            transform: translateX(5px);
+        }
+        
+        .learning-item h3 {
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--white);
+            margin-bottom: 8px;
+        }
+        
+        .learning-item p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+        /* =========================================
+           CTA
+        ========================================= */
+        
+        .experience-cta {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .experience-cta-box {
+            padding: 70px 30px;
+            border-radius: 24px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            background: radial-gradient( circle at center, rgba(0, 217, 255, 0.08), transparent 65%);
+        }
+        
+        .experience-cta h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        
+        .experience-cta p {
+            max-width: 620px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        
+        @media (max-width: 950px) {
+            .highlights-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .learning-layout {
+                grid-template-columns: 1fr;
+                gap: 45px;
+            }
+            .learning-intro {
+                position: static;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .experience-hero {
+                min-height: 60vh;
+            }
+            .experience-section,
+            .highlights-section,
+            .experience-learning,
+            .experience-cta {
+                padding: 70px 0;
+            }
+            .experience-item {
+                padding-left: 42px;
+            }
+            .experience-timeline::before {
+                left: 10px;
+            }
+            .experience-dot {
+                left: 3px;
+            }
+            .experience-top {
+                flex-direction: column;
+                gap: 15px;
+                padding: 25px;
+            }
+            .experience-date {
+                white-space: normal;
+            }
+            .experience-body {
+                padding: 25px;
+            }
+            .experience-role {
+                font-size: 1.3rem;
+            }
+            .page-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 500px) {
+            .highlights-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+            .highlight-value {
+                font-size: 1.6rem;
+            }
+            .highlight-label {
+                font-size: 0.75rem;
+            }
+            .experience-item {
+                padding-left: 35px;
+            }
+            .experience-cta-box {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
+
+    <div class="preloader">
+        <div class="loader-core"></div>
+    </div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span>&lt;</span>TP<span>/&gt;</span>
+            </a>
+
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <nav class="nav-menu" id="navMenu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="skills.html" class="nav-link">
+                    Skills
+                </a>
+
+                <a href="projects.html" class="nav-link">
+                    Projects
+                </a>
+
+                <a href="experience.html" class="nav-link active">
+                    Experience
+                </a>
+
+                <a href="certifications.html" class="nav-link">
+                    Certifications
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="experience-hero">
+
+            <div class="container">
+
+                <div class="experience-hero-content reveal">
+
+                    <div class="page-label">
+                        Experience
+                    </div>
+
+                    <h1 class="page-title">
+                        Learning From<br>
+                        <span>Real Engineering.</span>
+                    </h1>
+
+                    <p class="page-description">
+                        My internship and project experience has helped me connect academic concepts with practical engineering, instrumentation, embedded systems and software development.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             EXPERIENCE TIMELINE
+        ========================================== -->
+
+        <section class="experience-section">
+
+            <div class="container">
+
+
+                <div class="experience-header reveal">
+
+                    <div class="section-label">
+                        Internships
+                    </div>
+
+                    <h2 class="section-title">
+                        Industry Experience
+                    </h2>
+
+                    <p class="page-description">
+                        Practical exposure gained through technical internships and engineering-focused work environments.
+                    </p>
+
+                </div>
+
+
+                <div class="experience-timeline">
+
+
+                    <!-- =================================
+                         DRDO
+                    ================================== -->
+
+                    <div class="experience-item reveal">
+
+                        <div class="experience-dot"></div>
+
+
+                        <div class="experience-card">
+
+                            <div class="experience-top">
+
+                                <div>
+
+                                    <h3 class="experience-role">
+                                        Embedded Systems Intern
+                                    </h3>
+
+                                    <div class="experience-company">
+                                        Defence Research and Development Organisation — Scientific Analysis Group
+                                    </div>
+
+                                </div>
+
+
+                                <div class="experience-date">
+                                    16 June — 31 July 2025
+                                </div>
+
+                            </div>
+
+
+                            <div class="experience-body">
+
+                                <p class="experience-project">
+                                    <strong>Project:</strong> Embedded Driver Development for SPI, I2C and UART Communication Protocols
+                                </p>
+
+
+                                <div class="responsibility-title">
+                                    Key Work
+                                </div>
+
+                                <ul class="responsibilities">
+
+                                    <li>
+                                        Studied embedded communication protocols and their practical implementation.
+                                    </li>
+
+                                    <li>
+                                        Worked with SPI, I2C and UART communication concepts.
+                                    </li>
+
+                                    <li>
+                                        Explored microcontroller peripheral configuration and driver-level development.
+                                    </li>
+
+                                    <li>
+                                        Tested communication between embedded devices and peripherals.
+                                    </li>
+
+                                    <li>
+                                        Strengthened understanding of embedded firmware development and debugging.
+                                    </li>
+
+                                </ul>
+
+
+                                <div class="responsibility-title">
+                                    Technologies
+                                </div>
+
+                                <div class="experience-tags">
+
+                                    <span class="experience-tag">
+                                        Embedded C
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        SPI
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        I2C
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        UART
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        Microcontrollers
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        Firmware
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         NPL
+                    ================================== -->
+
+                    <div class="experience-item reveal">
+
+                        <div class="experience-dot"></div>
+
+
+                        <div class="experience-card">
+
+                            <div class="experience-top">
+
+                                <div>
+
+                                    <h3 class="experience-role">
+                                        Metrology & Measurement Automation Intern
+                                    </h3>
+
+                                    <div class="experience-company">
+                                        CSIR — National Physical Laboratory
+                                    </div>
+
+                                </div>
+
+
+                                <div class="experience-date">
+                                    Metrology Lab
+                                </div>
+
+                            </div>
+
+
+                            <div class="experience-body">
+
+                                <p class="experience-project">
+                                    <strong>Project:</strong> Frequency Characterization and Temperature Dependence of a 100 fF Standard Capacitor Using Measurement Automation
+                                </p>
+
+
+                                <div class="responsibility-title">
+                                    Key Work
+                                </div>
+
+                                <ul class="responsibilities">
+
+                                    <li>
+                                        Worked on automated measurement of capacitance and related electrical parameters.
+                                    </li>
+
+                                    <li>
+                                        Integrated laboratory instruments with Python-based measurement automation.
+                                    </li>
+
+                                    <li>
+                                        Used PyVISA and VISA-based communication for instrument control and data acquisition.
+                                    </li>
+
+                                    <li>
+                                        Worked with a Keysight E4980A LCR Meter for measurements.
+                                    </li>
+
+                                    <li>
+                                        Explored temperature dependence and frequency characterization of a standard capacitor.
+                                    </li>
+
+                                </ul>
+
+
+                                <div class="responsibility-title">
+                                    Technologies & Instruments
+                                </div>
+
+                                <div class="experience-tags">
+
+                                    <span class="experience-tag">
+                                        Python
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        PyVISA
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        NI-VISA
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        Keysight E4980A
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        LCR Measurement
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        Automation
+                                    </span>
+
+                                    <span class="experience-tag">
+                                        Metrology
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             EXPERIENCE HIGHLIGHTS
+        ========================================== -->
+
+        <section class="highlights-section">
+
+            <div class="container">
+
+
+                <div class="highlights-header reveal">
+
+                    <div class="section-label">
+                        Experience Snapshot
+                    </div>
+
+                    <h2 class="section-title">
+                        What I Have Worked With
+                    </h2>
+
+                </div>
+
+
+                <div class="highlights-grid">
+
+
+                    <div class="highlight-card reveal">
+
+                        <div class="highlight-value">
+                            02
+                        </div>
+
+                        <div class="highlight-label">
+                            Technical Internships
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight-card reveal">
+
+                        <div class="highlight-value">
+                            03
+                        </div>
+
+                        <div class="highlight-label">
+                            Communication Protocols
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight-card reveal">
+
+                        <div class="highlight-value">
+                            01
+                        </div>
+
+                        <div class="highlight-label">
+                            Measurement Automation Project
+                        </div>
+
+                    </div>
+
+
+                    <div class="highlight-card reveal">
+
+                        <div class="highlight-value">
+                            01
+                        </div>
+
+                        <div class="highlight-label">
+                            Embedded Driver Project
+                        </div>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             LEARNING
+        ========================================== -->
+
+        <section class="experience-learning">
+
+            <div class="container">
+
+                <div class="learning-layout">
+
+
+                    <div class="learning-intro reveal">
+
+                        <div class="section-label">
+                            What I Learned
+                        </div>
+
+                        <h2 class="section-title">
+                            Beyond The Classroom
+                        </h2>
+
+                        <p>
+                            Internships gave me an opportunity to understand how engineering concepts are applied in actual technical environments, where measurement, documentation, debugging and reliability matter.
+                        </p>
+
+                    </div>
+
+
+                    <div class="learning-list">
+
+
+                        <div class="learning-item reveal">
+
+                            <h3>
+                                Embedded Driver Development
+                            </h3>
+
+                            <p>
+                                Understanding how low-level communication protocols interact with microcontroller peripherals and firmware.
+                            </p>
+
+                        </div>
+
+
+                        <div class="learning-item reveal">
+
+                            <h3>
+                                Instrument Automation
+                            </h3>
+
+                            <p>
+                                Connecting software with laboratory instruments to automate measurements and collect structured experimental data.
+                            </p>
+
+                        </div>
+
+
+                        <div class="learning-item reveal">
+
+                            <h3>
+                                Engineering Documentation
+                            </h3>
+
+                            <p>
+                                Learning the importance of systematic testing, technical reporting, measurement records and reproducible engineering workflows.
+                            </p>
+
+                        </div>
+
+
+                        <div class="learning-item reveal">
+
+                            <h3>
+                                Practical Debugging
+                            </h3>
+
+                            <p>
+                                Diagnosing hardware and software issues by isolating components, testing interfaces and validating measured results.
+                            </p>
+
+                        </div>
+
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CTA
+        ========================================== -->
+
+        <section class="experience-cta">
+
+            <div class="container">
+
+                <div class="experience-cta-box reveal">
+
+                    <h2>
+                        Explore My
+                        <span class="gradient-text">
+                            Certifications.
+                        </span>
+                    </h2>
+
+                    <p>
+                        View the certifications and technical programs that complement my academic and internship experience.
+                    </p>
+
+                    <a href="certifications.html" class="btn btn-primary">
+                        View Certifications
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    <span>&lt;</span>TP<span>/&gt;</span>
+                </a>
+
+                <p>
+                    Electronics & Communication Engineering student building technology with purpose.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span class="current-year"></span> Tridev Patel. All Rights Reserved.
+            </p>
+
+            <p>
+                Built with HTML, CSS & JavaScript.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

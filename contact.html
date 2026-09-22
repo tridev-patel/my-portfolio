@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | Tridev Patel</title>
+
+    <meta name="description" content="Contact Tridev Patel for internships, engineering projects, collaborations and professional opportunities.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+
+    <style>
+        /* =========================================
+           CONTACT PAGE
+        ========================================= */
+        
+        .contact-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .contact-hero-content {
+            max-width: 850px;
+        }
+        
+        .page-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .page-label::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .page-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+        
+        .page-title span {
+            color: var(--primary);
+        }
+        
+        .page-description {
+            max-width: 720px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        /* =========================================
+           CONTACT SECTION
+        ========================================= */
+        
+        .contact-section {
+            padding: 100px 0;
+        }
+        
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 0.85fr 1.15fr;
+            gap: 30px;
+            align-items: stretch;
+        }
+        /* =========================================
+           CONTACT INFO
+        ========================================= */
+        
+        .contact-info {
+            padding: 40px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .section-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.15;
+            color: var(--white);
+            margin-bottom: 18px;
+        }
+        
+        .contact-intro {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 35px;
+        }
+        /* =========================================
+           CONTACT DETAILS
+        ========================================= */
+        
+        .contact-details {
+            display: grid;
+            gap: 14px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 17px;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            background: rgba(255, 255, 255, 0.015);
+            transition: 0.3s ease;
+        }
+        
+        .contact-item:hover {
+            border-color: rgba(0, 217, 255, 0.35);
+            transform: translateX(4px);
+        }
+        
+        .contact-icon {
+            width: 44px;
+            height: 44px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 10px;
+            color: var(--primary);
+            background: rgba(0, 217, 255, 0.05);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 0.75rem;
+            font-weight: 700;
+        }
+        
+        .contact-item-text small {
+            display: block;
+            color: var(--text-muted);
+            font-size: 0.7rem;
+            margin-bottom: 3px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .contact-item-text a,
+        .contact-item-text span {
+            color: var(--white);
+            font-size: 0.88rem;
+            word-break: break-word;
+        }
+        
+        .contact-item-text a {
+            transition: 0.25s ease;
+        }
+        
+        .contact-item-text a:hover {
+            color: var(--primary);
+        }
+        /* =========================================
+           SOCIAL LINKS
+        ========================================= */
+        
+        .social-title {
+            color: var(--white);
+            font-family: "Space Grotesk", sans-serif;
+            margin: 35px 0 15px;
+        }
+        
+        .social-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .social-link {
+            padding: 10px 15px;
+            border: 1px solid var(--border);
+            border-radius: 9px;
+            color: var(--text-muted);
+            font-size: 0.8rem;
+            transition: 0.25s ease;
+        }
+        
+        .social-link:hover {
+            color: var(--primary);
+            border-color: rgba(0, 217, 255, 0.4);
+            background: rgba(0, 217, 255, 0.05);
+            transform: translateY(-2px);
+        }
+        /* =========================================
+           CONTACT FORM
+        ========================================= */
+        
+        .contact-form-box {
+            padding: 40px;
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+        }
+        
+        .form-header {
+            margin-bottom: 30px;
+        }
+        
+        .form-header h2 {
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--white);
+            font-size: 1.8rem;
+            margin-bottom: 8px;
+        }
+        
+        .form-header p {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            line-height: 1.7;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
+        
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        
+        .form-group.full {
+            grid-column: 1 / -1;
+        }
+        
+        .form-group label {
+            color: var(--text-muted);
+            font-size: 0.78rem;
+            font-weight: 600;
+        }
+        
+        .form-group input,
+        .form-group textarea,
+        .form-group select {
+            width: 100%;
+            padding: 14px 15px;
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            outline: none;
+            background: rgba(255, 255, 255, 0.025);
+            color: var(--white);
+            font-family: inherit;
+            font-size: 0.88rem;
+            transition: 0.25s ease;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: rgba(255, 255, 255, 0.3);
+        }
+        
+        .form-group select option {
+            background: #0b1120;
+            color: white;
+        }
+        
+        .form-group input:focus,
+        .form-group textarea:focus,
+        .form-group select:focus {
+            border-color: rgba(0, 217, 255, 0.6);
+            box-shadow: 0 0 0 3px rgba(0, 217, 255, 0.06);
+        }
+        
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+        
+        .form-submit {
+            margin-top: 22px;
+        }
+        
+        .form-note {
+            color: var(--text-muted);
+            font-size: 0.72rem;
+            margin-top: 12px;
+            line-height: 1.6;
+        }
+        /* =========================================
+           AVAILABILITY
+        ========================================= */
+        
+        .availability-section {
+            padding: 100px 0;
+            background: rgba(255, 255, 255, 0.015);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .availability-box {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+        }
+        
+        .availability-content {
+            max-width: 600px;
+        }
+        
+        .availability-content p {
+            color: var(--text-muted);
+            line-height: 1.8;
+        }
+        
+        .status-box {
+            justify-self: end;
+            width: min(100%, 380px);
+            padding: 28px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 16px;
+            background: rgba(0, 217, 255, 0.03);
+        }
+        
+        .status-line {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: var(--white);
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .status-dot {
+            width: 9px;
+            height: 9px;
+            border-radius: 50%;
+            background: #39e58c;
+            box-shadow: 0 0 15px rgba(57, 229, 140, 0.7);
+            animation: statusPulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes statusPulse {
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.5;
+                transform: scale(0.8);
+            }
+        }
+        
+        .status-text {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            line-height: 1.6;
+        }
+        /* =========================================
+           RESUME CTA
+        ========================================= */
+        
+        .resume-section {
+            padding: 100px 0;
+            text-align: center;
+        }
+        
+        .resume-box {
+            padding: 70px 30px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 24px;
+            background: radial-gradient( circle at center, rgba(0, 217, 255, 0.08), transparent 65%);
+        }
+        
+        .resume-box h2 {
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--white);
+            font-size: clamp(2rem, 5vw, 3.4rem);
+            margin-bottom: 15px;
+        }
+        
+        .resume-box p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        /* =========================================
+           FORM SUCCESS MESSAGE
+        ========================================= */
+        
+        .form-message {
+            display: none;
+            margin-top: 18px;
+            padding: 14px 16px;
+            border-radius: 10px;
+            border: 1px solid rgba(0, 217, 255, 0.25);
+            background: rgba(0, 217, 255, 0.05);
+            color: var(--primary);
+            font-size: 0.82rem;
+        }
+        
+        .form-message.show {
+            display: block;
+        }
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        
+        @media (max-width: 900px) {
+            .contact-grid {
+                grid-template-columns: 1fr;
+            }
+            .availability-box {
+                grid-template-columns: 1fr;
+            }
+            .status-box {
+                justify-self: start;
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .contact-hero {
+                min-height: 60vh;
+            }
+            .contact-section,
+            .availability-section,
+            .resume-section {
+                padding: 70px 0;
+            }
+            .contact-info,
+            .contact-form-box {
+                padding: 25px;
+            }
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            .form-group.full {
+                grid-column: auto;
+            }
+            .page-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .contact-item {
+                align-items: flex-start;
+            }
+            .contact-icon {
+                width: 40px;
+                height: 40px;
+            }
+            .resume-box {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
+
+    <div class="preloader">
+        <div class="loader-core"></div>
+    </div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span>&lt;</span>TP<span>/&gt;</span>
+            </a>
+
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <nav class="nav-menu" id="navMenu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="skills.html" class="nav-link">
+                    Skills
+                </a>
+
+                <a href="projects.html" class="nav-link">
+                    Projects
+                </a>
+
+                <a href="experience.html" class="nav-link">
+                    Experience
+                </a>
+
+                <a href="certifications.html" class="nav-link">
+                    Certifications
+                </a>
+
+                <a href="contact.html" class="nav-link active">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="contact-hero">
+
+            <div class="container">
+
+                <div class="contact-hero-content reveal">
+
+                    <div class="page-label">
+                        Get In Touch
+                    </div>
+
+                    <h1 class="page-title">
+                        Let's Start A<br>
+                        <span>Conversation.</span>
+                    </h1>
+
+                    <p class="page-description">
+                        Whether it's an internship opportunity, engineering collaboration, technical project or simply a discussion about technology, feel free to reach out.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             CONTACT
+        ========================================== -->
+
+        <section class="contact-section">
+
+            <div class="container">
+
+                <div class="contact-grid">
+
+
+                    <!-- =================================
+                         CONTACT INFORMATION
+                    ================================== -->
+
+                    <div class="contact-info reveal">
+
+                        <div class="section-label">
+                            Contact
+                        </div>
+
+                        <h2 class="section-title">
+                            Connect With Me
+                        </h2>
+
+                        <p class="contact-intro">
+                            I am open to technical opportunities, internships, projects, collaborations and conversations around embedded systems, IoT and intelligent technologies.
+                        </p>
+
+
+                        <div class="contact-details">
+
+
+                            <!-- EMAIL -->
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    @
+                                </div>
+
+                                <div class="contact-item-text">
+
+                                    <small>
+                                        Email
+                                    </small>
+
+                                    <a href="mailto:your-email@example.com">
+                                        your-email@example.com
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- LINKEDIN -->
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    IN
+                                </div>
+
+                                <div class="contact-item-text">
+
+                                    <small>
+                                        LinkedIn
+                                    </small>
+
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        linkedin.com/in/your-profile
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- GITHUB -->
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    GH
+                                </div>
+
+                                <div class="contact-item-text">
+
+                                    <small>
+                                        GitHub
+                                    </small>
+
+                                    <a href="#" target="_blank" rel="noopener noreferrer">
+                                        github.com/your-username
+                                    </a>
+
+                                </div>
+
+                            </div>
+
+
+                            <!-- LOCATION -->
+
+                            <div class="contact-item">
+
+                                <div class="contact-icon">
+                                    LOC
+                                </div>
+
+                                <div class="contact-item-text">
+
+                                    <small>
+                                        Location
+                                    </small>
+
+                                    <span>
+                                        India
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                        </div>
+
+
+                        <!-- SOCIAL -->
+
+                        <h3 class="social-title">
+                            Find Me Online
+                        </h3>
+
+                        <div class="social-links">
+
+                            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                                LinkedIn
+                            </a>
+
+                            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                                GitHub
+                            </a>
+
+                            <a href="#" class="social-link" target="_blank" rel="noopener noreferrer">
+                                Instagram
+                            </a>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- =================================
+                         CONTACT FORM
+                    ================================== -->
+
+                    <div class="contact-form-box reveal">
+
+                        <div class="form-header">
+
+                            <div class="section-label">
+                                Message
+                            </div>
+
+                            <h2>
+                                Send Me A Message
+                            </h2>
+
+                            <p>
+                                Fill in the form below. Your email client will open with the message prepared for sending.
+                            </p>
+
+                        </div>
+
+
+                        <form id="contactForm" action="#" method="POST">
+
+                            <div class="form-grid">
+
+
+                                <!-- NAME -->
+
+                                <div class="form-group">
+
+                                    <label for="name">
+                                        Your Name
+                                    </label>
+
+                                    <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+                                </div>
+
+
+                                <!-- EMAIL -->
+
+                                <div class="form-group">
+
+                                    <label for="email">
+                                        Email Address
+                                    </label>
+
+                                    <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                                </div>
+
+
+                                <!-- SUBJECT -->
+
+                                <div class="form-group full">
+
+                                    <label for="subject">
+                                        Subject
+                                    </label>
+
+                                    <select id="subject" name="subject" required>
+
+                                        <option value="">
+                                            Select a topic
+                                        </option>
+
+                                        <option value="Internship Opportunity">
+                                            Internship Opportunity
+                                        </option>
+
+                                        <option value="Project Collaboration">
+                                            Project Collaboration
+                                        </option>
+
+                                        <option value="Technical Discussion">
+                                            Technical Discussion
+                                        </option>
+
+                                        <option value="Job Opportunity">
+                                            Job Opportunity
+                                        </option>
+
+                                        <option value="Other">
+                                            Other
+                                        </option>
+
+                                    </select>
+
+                                </div>
+
+
+                                <!-- MESSAGE -->
+
+                                <div class="form-group full">
+
+                                    <label for="message">
+                                        Message
+                                    </label>
+
+                                    <textarea id="message" name="message" placeholder="Write your message..." required></textarea>
+
+                                </div>
+
+
+                            </div>
+
+
+                            <div class="form-submit">
+
+                                <button type="submit" class="btn btn-primary">
+                                    Prepare Email →
+                                </button>
+
+                            </div>
+
+
+                            <div class="form-message" id="formMessage">
+                                Your email client is being prepared...
+                            </div>
+
+
+                            <p class="form-note">
+                                This form uses your device's default email application. No backend server is required.
+                            </p>
+
+                        </form>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             AVAILABILITY
+        ========================================== -->
+
+        <section class="availability-section">
+
+            <div class="container">
+
+                <div class="availability-box">
+
+
+                    <div class="availability-content reveal">
+
+                        <div class="section-label">
+                            Availability
+                        </div>
+
+                        <h2 class="section-title">
+                            Open To New Opportunities
+                        </h2>
+
+                        <p>
+                            Currently focused on building my engineering skills and practical portfolio. I am interested in opportunities involving embedded systems, IoT, automation, electronics and intelligent technologies.
+                        </p>
+
+                    </div>
+
+
+                    <div class="status-box reveal">
+
+                        <div class="status-line">
+
+                            <span class="status-dot"></span> Available for opportunities
+
+                        </div>
+
+                        <p class="status-text">
+                            Open to internships, entry-level opportunities, technical collaborations and engineering projects.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             RESUME
+        ========================================== -->
+
+        <section class="resume-section">
+
+            <div class="container">
+
+                <div class="resume-box reveal">
+
+                    <h2>
+                        Want To Know More
+                        <span class="gradient-text">
+                            About Me?
+                        </span>
+                    </h2>
+
+                    <p>
+                        Download my resume for a concise overview of my education, technical skills, internships, projects and certifications.
+                    </p>
+
+                    <a href="resume/Tridev_Patel_Resume.pdf" class="btn btn-primary" download>
+                        Download Resume ↓
+                    </a>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    <span>&lt;</span>TP<span>/&gt;</span>
+                </a>
+
+                <p>
+                    Electronics & Communication Engineering student building technology with purpose.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span class="current-year"></span> Tridev Patel. All Rights Reserved.
+            </p>
+
+            <p>
+                Built with HTML, CSS & JavaScript.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         CONTACT FORM JS
+    ========================================== -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const contactForm =
+                document.getElementById("contactForm");
+
+            const formMessage =
+                document.getElementById("formMessage");
+
+
+            contactForm.addEventListener("submit", (event) => {
+
+                event.preventDefault();
+
+
+                const name =
+                    document.getElementById("name").value.trim();
+
+                const email =
+                    document.getElementById("email").value.trim();
+
+                const subject =
+                    document.getElementById("subject").value.trim();
+
+                const message =
+                    document.getElementById("message").value.trim();
+
+
+                if (!name || !email || !subject || !message) {
+
+                    formMessage.textContent =
+                        "Please fill in all required fields.";
+
+                    formMessage.classList.add("show");
+
+                    return;
+                }
+
+
+                const recipient =
+                    "your-email@example.com";
+
+
+                const emailSubject =
+                    encodeURIComponent(
+                        subject + " — Portfolio Contact"
+                    );
+
+
+                const emailBody =
+                    encodeURIComponent(
+                        `Hello Tridev,
+
+Name: ${name}
+Email: ${email}
+
+Message:
+${message}
+`
+                    );
+
+
+                formMessage.textContent =
+                    "Opening your email application...";
+
+                formMessage.classList.add("show");
+
+
+                window.location.href =
+                    `mailto:${recipient}?subject=${emailSubject}&body=${emailBody}`;
+
+            });
+
+        });
+    </script>
+
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

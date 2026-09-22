@@ -1,0 +1,1483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Projects | Tridev Patel</title>
+
+    <meta name="description" content="Engineering projects by Tridev Patel including Embedded Systems, IoT, AI, Automation and Intelligent Systems.">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+    <style>
+        /* =========================================
+           PROJECT PAGE
+        ========================================= */
+        
+        .projects-hero {
+            min-height: 55vh;
+            display: flex;
+            align-items: center;
+            padding-top: 100px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .projects-hero-content {
+            max-width: 850px;
+        }
+        
+        .page-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--primary);
+            font-size: 0.85rem;
+            font-weight: 600;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+        
+        .page-label::before {
+            content: "";
+            width: 30px;
+            height: 2px;
+            background: var(--primary);
+        }
+        
+        .page-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(3rem, 7vw, 5.5rem);
+            line-height: 1;
+            color: var(--white);
+            margin-bottom: 25px;
+        }
+        
+        .page-title span {
+            color: var(--primary);
+        }
+        
+        .page-description {
+            max-width: 720px;
+            color: var(--text-muted);
+            font-size: 1.05rem;
+            line-height: 1.8;
+        }
+        /* =========================================
+           PROJECT FILTER
+        ========================================= */
+        
+        .projects-section {
+            padding: 100px 0;
+        }
+        
+        .projects-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            gap: 30px;
+            margin-bottom: 50px;
+        }
+        
+        .section-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 4vw, 3.2rem);
+            line-height: 1.15;
+            color: var(--white);
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+            gap: 8px;
+        }
+        
+        .filter-btn {
+            padding: 9px 15px;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: transparent;
+            color: var(--text-muted);
+            cursor: pointer;
+            font-family: inherit;
+            font-size: 0.82rem;
+            transition: 0.25s ease;
+        }
+        
+        .filter-btn:hover,
+        .filter-btn.active {
+            color: var(--primary);
+            border-color: rgba(0, 217, 255, 0.4);
+            background: rgba(0, 217, 255, 0.06);
+        }
+        /* =========================================
+           PROJECT GRID
+        ========================================= */
+        
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+        
+        .project-card {
+            border: 1px solid var(--border);
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.02);
+            overflow: hidden;
+            transition: 0.35s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-7px);
+            border-color: rgba(0, 217, 255, 0.4);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+        }
+        
+        .project-card.hidden {
+            display: none;
+        }
+        /* =========================================
+           PROJECT VISUAL
+        ========================================= */
+        
+        .project-visual {
+            height: 260px;
+            position: relative;
+            overflow: hidden;
+            border-bottom: 1px solid var(--border);
+            background: linear-gradient( 135deg, rgba(0, 217, 255, 0.08), rgba(255, 255, 255, 0.01));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .project-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient( rgba(0, 217, 255, 0.04) 1px, transparent 1px), linear-gradient( 90deg, rgba(0, 217, 255, 0.04) 1px, transparent 1px);
+            background-size: 30px 30px;
+        }
+        
+        .project-code {
+            position: relative;
+            z-index: 2;
+            width: 90px;
+            height: 90px;
+            border: 1px solid rgba(0, 217, 255, 0.4);
+            border-radius: 22px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1rem;
+            font-weight: 700;
+            background: rgba(0, 217, 255, 0.06);
+            box-shadow: 0 0 40px rgba(0, 217, 255, 0.1), inset 0 0 25px rgba(0, 217, 255, 0.05);
+        }
+        
+        .project-number {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            z-index: 3;
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 0.8rem;
+            font-weight: 700;
+            color: rgba(255, 255, 255, 0.35);
+        }
+        
+        .project-type {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            z-index: 3;
+            padding: 7px 10px;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 7px;
+            color: var(--primary);
+            background: rgba(0, 0, 0, 0.2);
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        /* =========================================
+           PROJECT CONTENT
+        ========================================= */
+        
+        .project-content {
+            padding: 30px;
+        }
+        
+        .project-title {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 1.45rem;
+            color: var(--white);
+            margin-bottom: 12px;
+        }
+        
+        .project-description {
+            color: var(--text-muted);
+            line-height: 1.7;
+            font-size: 0.92rem;
+            margin-bottom: 22px;
+        }
+        
+        .project-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 7px;
+            margin-bottom: 25px;
+        }
+        
+        .project-tag {
+            padding: 6px 9px;
+            border-radius: 6px;
+            background: rgba(0, 217, 255, 0.05);
+            border: 1px solid rgba(0, 217, 255, 0.12);
+            color: var(--primary);
+            font-size: 0.72rem;
+        }
+        
+        .project-links {
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+        
+        .project-link {
+            color: var(--text-muted);
+            font-size: 0.82rem;
+            font-weight: 600;
+            transition: 0.25s ease;
+        }
+        
+        .project-link:hover {
+            color: var(--primary);
+        }
+        /* =========================================
+           FEATURED PROJECT
+        ========================================= */
+        
+        .featured-project {
+            margin-bottom: 25px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            border: 1px solid rgba(0, 217, 255, 0.2);
+            border-radius: 20px;
+            overflow: hidden;
+            background: linear-gradient( 135deg, rgba(0, 217, 255, 0.06), rgba(255, 255, 255, 0.015));
+        }
+        
+        .featured-visual {
+            min-height: 430px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            border-right: 1px solid var(--border);
+        }
+        
+        .featured-visual::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: linear-gradient( rgba(0, 217, 255, 0.05) 1px, transparent 1px), linear-gradient( 90deg, rgba(0, 217, 255, 0.05) 1px, transparent 1px);
+            background-size: 35px 35px;
+        }
+        
+        .featured-core {
+            width: 180px;
+            height: 180px;
+            border: 1px solid rgba(0, 217, 255, 0.5);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+            color: var(--primary);
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            background: rgba(0, 217, 255, 0.04);
+            box-shadow: 0 0 70px rgba(0, 217, 255, 0.12), inset 0 0 50px rgba(0, 217, 255, 0.06);
+            animation: projectPulse 3s ease-in-out infinite;
+        }
+        
+        .featured-core::before,
+        .featured-core::after {
+            content: "";
+            position: absolute;
+            border: 1px solid rgba(0, 217, 255, 0.18);
+            border-radius: 50%;
+        }
+        
+        .featured-core::before {
+            inset: -35px;
+        }
+        
+        .featured-core::after {
+            inset: -70px;
+        }
+        
+        @keyframes projectPulse {
+            0%,
+            100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.05);
+            }
+        }
+        
+        .featured-content {
+            padding: 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .featured-label {
+            color: var(--primary);
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+        
+        .featured-title {
+            font-family: "Space Grotesk", sans-serif;
+            color: var(--white);
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+            margin-bottom: 18px;
+        }
+        
+        .featured-description {
+            color: var(--text-muted);
+            line-height: 1.8;
+            margin-bottom: 25px;
+        }
+        
+        .featured-points {
+            list-style: none;
+            margin-bottom: 25px;
+        }
+        
+        .featured-points li {
+            color: var(--text-muted);
+            font-size: 0.88rem;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+        
+        .featured-points li::before {
+            content: "→";
+            position: absolute;
+            left: 0;
+            color: var(--primary);
+        }
+        /* =========================================
+           PROJECT CTA
+        ========================================= */
+        
+        .projects-cta {
+            margin-top: 80px;
+            text-align: center;
+            padding: 70px 30px;
+            border: 1px solid var(--border);
+            border-radius: 22px;
+            background: radial-gradient( circle at center, rgba(0, 217, 255, 0.06), transparent 65%);
+        }
+        
+        .projects-cta h2 {
+            font-family: "Space Grotesk", sans-serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+        
+        .projects-cta p {
+            max-width: 600px;
+            margin: 0 auto 30px;
+            color: var(--text-muted);
+            line-height: 1.7;
+        }
+        /* =========================================
+           RESPONSIVE
+        ========================================= */
+        
+        @media (max-width: 900px) {
+            .projects-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .filter-buttons {
+                justify-content: flex-start;
+            }
+            .featured-project {
+                grid-template-columns: 1fr;
+            }
+            .featured-visual {
+                min-height: 350px;
+                border-right: none;
+                border-bottom: 1px solid var(--border);
+            }
+        }
+        
+        @media (max-width: 700px) {
+            .projects-hero {
+                min-height: 60vh;
+            }
+            .projects-section {
+                padding: 70px 0;
+            }
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+            .project-visual {
+                height: 220px;
+            }
+            .project-content {
+                padding: 25px;
+            }
+            .featured-content {
+                padding: 30px;
+            }
+            .featured-visual {
+                min-height: 300px;
+            }
+            .featured-core {
+                width: 140px;
+                height: 140px;
+            }
+            .page-title {
+                font-size: 3rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .filter-buttons {
+                width: 100%;
+            }
+            .filter-btn {
+                flex: 1;
+            }
+            .project-title {
+                font-size: 1.25rem;
+            }
+            .project-description {
+                font-size: 0.85rem;
+            }
+            .projects-cta {
+                padding: 50px 20px;
+            }
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         PRELOADER
+    ========================================== -->
+
+    <div class="preloader">
+        <div class="loader-core"></div>
+    </div>
+
+
+    <!-- =========================================
+         NAVBAR
+    ========================================== -->
+
+    <header class="navbar">
+
+        <div class="container nav-container">
+
+            <a href="index.html" class="logo">
+                <span>&lt;</span>TP<span>/&gt;</span>
+            </a>
+
+
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
+
+            <nav class="nav-menu" id="navMenu">
+
+                <a href="index.html" class="nav-link">
+                    Home
+                </a>
+
+                <a href="about.html" class="nav-link">
+                    About
+                </a>
+
+                <a href="skills.html" class="nav-link">
+                    Skills
+                </a>
+
+                <a href="projects.html" class="nav-link active">
+                    Projects
+                </a>
+
+                <a href="experience.html" class="nav-link">
+                    Experience
+                </a>
+
+                <a href="certifications.html" class="nav-link">
+                    Certifications
+                </a>
+
+                <a href="contact.html" class="nav-link">
+                    Contact
+                </a>
+
+            </nav>
+
+        </div>
+
+    </header>
+
+
+    <main>
+
+
+        <!-- =========================================
+             HERO
+        ========================================== -->
+
+        <section class="projects-hero">
+
+            <div class="container">
+
+                <div class="projects-hero-content reveal">
+
+                    <div class="page-label">
+                        Selected Work
+                    </div>
+
+                    <h1 class="page-title">
+                        Engineering Ideas<br> Into <span>Real Systems.</span>
+                    </h1>
+
+                    <p class="page-description">
+                        A collection of projects combining electronics, embedded systems, IoT, automation, software and intelligent technologies to solve practical problems.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================================
+             PROJECTS
+        ========================================== -->
+
+        <section class="projects-section">
+
+            <div class="container">
+
+
+                <div class="projects-header reveal">
+
+                    <div>
+
+                        <div class="section-label">
+                            Portfolio
+                        </div>
+
+                        <h2 class="section-title">
+                            Featured Projects
+                        </h2>
+
+                    </div>
+
+
+                    <div class="filter-buttons">
+
+                        <button class="filter-btn active" data-filter="all">
+                            All
+                        </button>
+
+                        <button class="filter-btn" data-filter="embedded">
+                            Embedded
+                        </button>
+
+                        <button class="filter-btn" data-filter="iot">
+                            IoT
+                        </button>
+
+                        <button class="filter-btn" data-filter="ai">
+                            AI
+                        </button>
+
+                        <button class="filter-btn" data-filter="automation">
+                            Automation
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================================
+                     FEATURED PROJECT
+                ====================================== -->
+
+                <div class="featured-project reveal" data-category="ai iot embedded">
+
+                    <div class="featured-visual">
+
+                        <div class="project-number">
+                            00 / FEATURED
+                        </div>
+
+                        <div class="project-type">
+                            AI + IoT
+                        </div>
+
+                        <div class="featured-core">
+                            SD-AI
+                        </div>
+
+                    </div>
+
+
+                    <div class="featured-content">
+
+                        <div class="featured-label">
+                            Featured Project
+                        </div>
+
+                        <h2 class="featured-title">
+                            SentraDrive AI
+                        </h2>
+
+                        <p class="featured-description">
+                            An intelligent in-cabin AI co-pilot designed to detect driver drowsiness and distraction using edge AI, computer vision and connected vehicle technologies.
+                        </p>
+
+
+                        <ul class="featured-points">
+
+                            <li>
+                                Real-time driver monitoring
+                            </li>
+
+                            <li>
+                                AI-based fatigue and distraction detection
+                            </li>
+
+                            <li>
+                                ESP32-S3 edge processing
+                            </li>
+
+                            <li>
+                                Vehicle connectivity and telemetry
+                            </li>
+
+                            <li>
+                                Designed for fleet and individual drivers
+                            </li>
+
+                        </ul>
+
+
+                        <div class="project-tags">
+
+                            <span class="project-tag">
+                                ESP32-S3
+                            </span>
+
+                            <span class="project-tag">
+                                TinyML
+                            </span>
+
+                            <span class="project-tag">
+                                Computer Vision
+                            </span>
+
+                            <span class="project-tag">
+                                IoT
+                            </span>
+
+                            <span class="project-tag">
+                                CAN
+                            </span>
+
+                        </div>
+
+
+                        <div class="project-links">
+
+                            <a href="#" class="project-link">
+                                View Details →
+                            </a>
+
+                            <a href="#" class="project-link">
+                                GitHub →
+                            </a>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =====================================
+                     PROJECT GRID
+                ====================================== -->
+
+                <div class="projects-grid">
+
+
+                    <!-- PROJECT 01 -->
+
+                    <article class="project-card reveal" data-category="iot embedded">
+
+                        <div class="project-visual">
+
+                            <div class="project-number">
+                                01
+                            </div>
+
+                            <div class="project-type">
+                                IoT
+                            </div>
+
+                            <div class="project-code">
+                                IoT
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3 class="project-title">
+                                IoT Motion Surveillance System
+                            </h3>
+
+                            <p class="project-description">
+                                A smart surveillance system using an ESP32-CAM to detect motion, capture images and provide remote monitoring capabilities.
+                            </p>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    ESP32-CAM
+                                </span>
+
+                                <span class="project-tag">
+                                    IoT
+                                </span>
+
+                                <span class="project-tag">
+                                    Camera
+                                </span>
+
+                                <span class="project-tag">
+                                    Python
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    Details →
+                                </a>
+
+                                <a href="#" class="project-link">
+                                    GitHub →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 02 -->
+
+                    <article class="project-card reveal" data-category="automation">
+
+                        <div class="project-visual">
+
+                            <div class="project-number">
+                                02
+                            </div>
+
+                            <div class="project-type">
+                                Automation
+                            </div>
+
+                            <div class="project-code">
+                                LCR
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3 class="project-title">
+                                LCR Meter & Thermohygrometer Automation
+                            </h3>
+
+                            <p class="project-description">
+                                Measurement automation system for instrument control, data acquisition, logging and characterization using Python and VISA communication.
+                            </p>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    PyVISA
+                                </span>
+
+                                <span class="project-tag">
+                                    NI-VISA
+                                </span>
+
+                                <span class="project-tag">
+                                    Python
+                                </span>
+
+                                <span class="project-tag">
+                                    LCR Meter
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    Details →
+                                </a>
+
+                                <a href="#" class="project-link">
+                                    Report →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 03 -->
+
+                    <article class="project-card reveal" data-category="embedded">
+
+                        <div class="project-visual">
+
+                            <div class="project-number">
+                                03
+                            </div>
+
+                            <div class="project-type">
+                                Embedded
+                            </div>
+
+                            <div class="project-code">
+                                MCU
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3 class="project-title">
+                                Embedded Communication System
+                            </h3>
+
+                            <p class="project-description">
+                                Embedded system development focused on implementing and understanding SPI, I2C and UART communication between microcontrollers and peripherals.
+                            </p>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    STM32
+                                </span>
+
+                                <span class="project-tag">
+                                    SPI
+                                </span>
+
+                                <span class="project-tag">
+                                    I2C
+                                </span>
+
+                                <span class="project-tag">
+                                    UART
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    Details →
+                                </a>
+
+                                <a href="#" class="project-link">
+                                    GitHub →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 04 -->
+
+                    <article class="project-card reveal" data-category="ai embedded">
+
+                        <div class="project-visual">
+
+                            <div class="project-number">
+                                04
+                            </div>
+
+                            <div class="project-type">
+                                AI
+                            </div>
+
+                            <div class="project-code">
+                                AI
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3 class="project-title">
+                                Drone ADAS
+                            </h3>
+
+                            <p class="project-description">
+                                Intelligent assistance concept combining sensing, embedded processing and AI-based perception for safer autonomous drone navigation.
+                            </p>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    AI
+                                </span>
+
+                                <span class="project-tag">
+                                    Computer Vision
+                                </span>
+
+                                <span class="project-tag">
+                                    Embedded
+                                </span>
+
+                                <span class="project-tag">
+                                    Sensors
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    Details →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 05 -->
+
+                    <article class="project-card reveal" data-category="ai iot embedded">
+
+                        <div class="project-visual">
+
+                            <div class="project-number">
+                                05
+                            </div>
+
+                            <div class="project-type">
+                                AI + IoT
+                            </div>
+
+                            <div class="project-code">
+                                NAV
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3 class="project-title">
+                                Smart Blind Navigation Ecosystem
+                            </h3>
+
+                            <p class="project-description">
+                                Assistive technology concept using sensors, intelligent processing and connected devices to support navigation and environmental awareness.
+                            </p>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    IoT
+                                </span>
+
+                                <span class="project-tag">
+                                    Sensors
+                                </span>
+
+                                <span class="project-tag">
+                                    AI
+                                </span>
+
+                                <span class="project-tag">
+                                    Embedded
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    Details →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 06 -->
+
+                    <article class="project-card reveal" data-category="ai embedded">
+
+                        <div class="project-visual">
+
+                            <div class="project-number">
+                                06
+                            </div>
+
+                            <div class="project-type">
+                                AI
+                            </div>
+
+                            <div class="project-code">
+                                AR
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3 class="project-title">
+                                AR Smart Glasses
+                            </h3>
+
+                            <p class="project-description">
+                                Smart wearable concept combining embedded electronics, sensing, display technology and intelligent assistance for hands-free information access.
+                            </p>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    Embedded
+                                </span>
+
+                                <span class="project-tag">
+                                    AI
+                                </span>
+
+                                <span class="project-tag">
+                                    Wearable
+                                </span>
+
+                                <span class="project-tag">
+                                    IoT
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    Details →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 07 -->
+
+                    <article class="project-card reveal" data-category="iot embedded">
+
+                        <div class="project-visual">
+
+                            <div class="project-number">
+                                07
+                            </div>
+
+                            <div class="project-type">
+                                IoT
+                            </div>
+
+                            <div class="project-code">
+                                CAN
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3 class="project-title">
+                                Bike ADAS
+                            </h3>
+
+                            <p class="project-description">
+                                Advanced rider-assistance concept using sensors and embedded processing to improve situational awareness and road safety.
+                            </p>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    Sensors
+                                </span>
+
+                                <span class="project-tag">
+                                    Embedded
+                                </span>
+
+                                <span class="project-tag">
+                                    IoT
+                                </span>
+
+                                <span class="project-tag">
+                                    ADAS
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    Details →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                    <!-- PROJECT 08 -->
+
+                    <article class="project-card reveal" data-category="automation iot">
+
+                        <div class="project-visual">
+
+                            <div class="project-number">
+                                08
+                            </div>
+
+                            <div class="project-type">
+                                Automation
+                            </div>
+
+                            <div class="project-code">
+                                MQTT
+                            </div>
+
+                        </div>
+
+
+                        <div class="project-content">
+
+                            <h3 class="project-title">
+                                IoT Relay MQTT System
+                            </h3>
+
+                            <p class="project-description">
+                                Connected relay control system using MQTT communication for remote device control, monitoring and automation.
+                            </p>
+
+
+                            <div class="project-tags">
+
+                                <span class="project-tag">
+                                    MQTT
+                                </span>
+
+                                <span class="project-tag">
+                                    ESP32
+                                </span>
+
+                                <span class="project-tag">
+                                    IoT
+                                </span>
+
+                                <span class="project-tag">
+                                    Automation
+                                </span>
+
+                            </div>
+
+
+                            <div class="project-links">
+
+                                <a href="#" class="project-link">
+                                    Details →
+                                </a>
+
+                                <a href="#" class="project-link">
+                                    Report →
+                                </a>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+
+                </div>
+
+
+                <!-- =====================================
+                     CTA
+                ====================================== -->
+
+                <div class="projects-cta reveal">
+
+                    <h2>
+                        More Projects
+                        <span class="gradient-text">Coming Soon.</span>
+                    </h2>
+
+                    <p>
+                        I continuously experiment with embedded systems, AI, IoT and automation to build practical engineering solutions.
+                    </p>
+
+                    <a href="contact.html" class="btn btn-primary">
+                        Let's Connect
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- =========================================
+         FOOTER
+    ========================================== -->
+
+    <footer class="footer">
+
+        <div class="container footer-content">
+
+            <div class="footer-brand">
+
+                <a href="index.html" class="logo">
+                    <span>&lt;</span>TP<span>/&gt;</span>
+                </a>
+
+                <p>
+                    Electronics & Communication Engineering student building technology with purpose.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+                <a href="about.html">About</a>
+                <a href="skills.html">Skills</a>
+                <a href="projects.html">Projects</a>
+                <a href="experience.html">Experience</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="contact.html">Contact</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="container footer-bottom">
+
+            <p>
+                © <span class="current-year"></span> Tridev Patel. All Rights Reserved.
+            </p>
+
+            <p>
+                Built with HTML, CSS & JavaScript.
+            </p>
+
+        </div>
+
+    </footer>
+
+
+    <!-- =========================================
+         PROJECT FILTER JS
+    ========================================== -->
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+
+            const filterButtons =
+                document.querySelectorAll(".filter-btn");
+
+            const projectCards =
+                document.querySelectorAll(".project-card");
+
+            const featuredProject =
+                document.querySelector(".featured-project");
+
+
+            filterButtons.forEach((button) => {
+
+                button.addEventListener("click", () => {
+
+                    const filter =
+                        button.getAttribute("data-filter");
+
+
+                    /* Active button */
+
+                    filterButtons.forEach((btn) => {
+                        btn.classList.remove("active");
+                    });
+
+                    button.classList.add("active");
+
+
+                    /* Normal project cards */
+
+                    projectCards.forEach((card) => {
+
+                        const categories =
+                            card.getAttribute("data-category") || "";
+
+                        if (
+                            filter === "all" ||
+                            categories.includes(filter)
+                        ) {
+                            card.classList.remove("hidden");
+                        } else {
+                            card.classList.add("hidden");
+                        }
+
+                    });
+
+
+                    /* Featured project */
+
+                    if (featuredProject) {
+
+                        const categories =
+                            featuredProject.getAttribute(
+                                "data-category"
+                            ) || "";
+
+                        if (
+                            filter === "all" ||
+                            categories.includes(filter)
+                        ) {
+                            featuredProject.style.display = "";
+                        } else {
+                            featuredProject.style.display = "none";
+                        }
+
+                    }
+
+                });
+
+            });
+
+        });
+    </script>
+
+
+    <!-- Main JavaScript -->
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
